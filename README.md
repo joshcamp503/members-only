@@ -1,24 +1,29 @@
-# README
+# The Odin Project Ruby on Rails members-only application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the members-only application for
+[*The Odin Project*]
 
-Things you may want to cover:
+## Objective
 
-* Ruby version
+```
+Roll your own authentication
+```
 
-* System dependencies
+Create a clubhouse:
 
-* Configuration
+```
+Admins can edit member information
+```
 
-* Database creation
+```
+Members can create and view posts, can view authors of posts
+```
 
-* Database initialization
+Non-members can only view posts, not authors
 
-* How to run the test suite
+```
+Non-users cannot access anything
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For more information, see
+[*The Odin Project* website].
