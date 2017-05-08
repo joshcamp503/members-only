@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>MembersOnly</title>
-    <%= csrf_meta_tags %>
+<% provide(:title, "Members Only") %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title><%= yield(:title) %> | Social Forum</title>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+<div class="center jumbotron">
+  <h1>Welcome to Members Only</h1>
+
+  <%= link_to "Sign Up", signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Log In", '#', class: "btn btn-lg btn-primary" %>
+
+</div>
