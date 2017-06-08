@@ -1,27 +1,32 @@
 class PostsController < ApplicationController
+  before_action :logged_in_user,      only: [:index, :new, :create]
 
-  def new
-    @post = Post.new
+  def index
+    @posts = Post.all
   end
 
   def show
     @post = Post.find(params[:id])
   end
 
+  def new
+    @post = Post.new
+  end
+
   def create
-    @post = Post.new(post_params)   
+    @post = Post.new(post_params)
     if @post.save
       flash[:success] = "Post submitted"
-      redirect_to @post
+      redirect_to @posts
     else
       render 'new'
     end
   end
 
-  private 
+  private
 
     def post_params
-      params.require(:post).permit(:subject, :title)
+      params.require(:post).permit(:subject, :body)
     end 
 
 end
