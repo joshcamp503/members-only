@@ -1,4 +1,13 @@
 <% provide(:title, @post.subject) %>
 <h1><%= @post.subject %></h1>
+<h3>
+  Author: <% if current_user %>
+              <%= @post.user.name %>
+          <% else %>
+              Restricted
+          <% end %>
+  <br>
+
+</h3>
 
 <h4><%= @post.body %></h4>

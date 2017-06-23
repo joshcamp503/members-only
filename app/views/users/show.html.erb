@@ -1,4 +1,7 @@
 <% provide(:title, @user.name) %>
 <h1>
   <%= @user.name %>
+  <br>
+  <br>
+  <%= link_to "Create new Post", new_post_path, class: "btn btn-lg btn-primary" %>
 </h1>

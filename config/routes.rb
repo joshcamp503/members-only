@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get 'posts/new',           to: 'posts#new'
+  get   'posts/new',          to: 'posts#new'
+  post  'posts/new',          to: 'posts#create'
 
   root 'static_pages#home'
   get  'home',               to: 'static_pages#home'

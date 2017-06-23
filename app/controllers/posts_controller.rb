@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include ApplicationHelper
   before_action :logged_in_user,      only: [:index, :new, :create]
 
   def index
@@ -14,10 +15,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    user = current_user
+    @post = user.posts.create(post_params)
     if @post.save
       flash[:success] = "Post submitted"
-      redirect_to @posts
+      redirect_to post_path(@post.user)
     else
       render 'new'
     end
@@ -26,7 +28,8 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:subject, :body)
+      params.require(:post).permit(:subject, :body )
     end 
 
 end
+
